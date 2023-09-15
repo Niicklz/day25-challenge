@@ -28,8 +28,8 @@ export const App = () => {
   useEffect(() => {
     const simulatedLoader = () => {
       setTimeout(() => {
-        setLoader(false); // Cambia loader a false después de 1500ms
-      }, 1500);
+        setLoader(false);
+      }, 3000);
     };
     simulatedLoader();
   }, []);
