@@ -1,0 +1,85 @@
+
+  .app {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    transition: 2s ease-out;
+    z-index: 10;
+  }
+  
+  .loader {
+    width: 90px;
+    height: 90px;
+    position: relative;
+    transform-origin: center;
+  }
+  .loader::after {
+    content: "";
+    width: 0; 
+    position: absolute;
+     
+       height: 0; 
+       border: 50px solid transparent;
+       border-bottom-color: #fff ;
+    animation: girar2 2s linear infinite 0.5s ;
+      
+  }
+  .loader::before {
+  
+    content: "";
+    position: absolute;
+    transform: rotate(90deg);
+    width: 0; 
+       height: 0; 
+       border: 50px solid transparent;
+       border-bottom-color: #fff ;
+       transition: 1s;
+       animation: girar 2s linear infinite ;
+      
+       
+       
+       
+  }
+
+  .hidden {
+    transition: 2s ease-out;
+   opacity: 0;
+   z-index: -10000;
+  }
+  
+  @keyframes girar {
+    0% {
+      
+      transform: rotate(90deg);
+      animation-timing-function: cubic-bezier(0.9, 0.9, 0, 1);
+    }
+    50% {
+      animation-timing-function: cubic-bezier(0.9, 0.9, 0, 1);
+      transform: rotate(270deg);
+      
+    }
+    100% {
+      
+      
+      transform: rotate(450deg);
+    }
+  }
+  
+  @keyframes girar2 {
+    0% {
+      transform: rotate(0deg);
+      animation-timing-function: cubic-bezier(0.9, 0.9, 0, 1);
+  
+    }
+    50% {
+      transform: rotate(180deg);
+      animation-timing-function: cubic-bezier(0.9, 0.9, 0, 1);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
